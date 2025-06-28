@@ -1116,10 +1116,12 @@ body {
         padding: 2rem 1rem;
     }
     
-    .skills-grid,
+    .skills-grid{
+        grid-template-columns: 1fr 1fr;
+    }
     .projects-grid,
     .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr ;
     }
     
     .skill-item {
@@ -1184,7 +1186,7 @@ body {
     .project-card,
     .skill-card,
     .contact-card {
-        margin: 0 1rem;
+        margin:  1rem;
     }
 
     .top-nav {
@@ -1514,7 +1516,9 @@ select:focus {
         padding: 2rem 1rem;
     }
     
-    .skills-grid,
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
     .projects-grid,
     .contact-grid {
         grid-template-columns: 1fr;
@@ -1550,7 +1554,7 @@ select:focus {
     .project-card,
     .skill-card,
     .contact-card {
-        margin: 0 1rem;
+        margin: 1rem;
     }
 
     .top-nav {
