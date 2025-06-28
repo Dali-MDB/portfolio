@@ -23,6 +23,14 @@ class PortfolioApp {
             this.toggleSidebar();
         });
 
+        // Sidebar close button
+        const sidebarClose = document.getElementById('sidebarClose');
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', () => {
+                this.closeSidebar();
+            });
+        }
+
         // Close sidebar when clicking outside
         document.addEventListener('click', (e) => {
             if (!this.sidebar.contains(e.target) && !this.sidebarToggle.contains(e.target)) {
@@ -105,11 +113,13 @@ class PortfolioApp {
 
     toggleSidebar() {
         this.sidebar.classList.toggle('active');
+        this.sidebarToggle.classList.toggle('active');
         document.body.style.overflow = this.sidebar.classList.contains('active') ? 'hidden' : '';
     }
 
     closeSidebar() {
         this.sidebar.classList.remove('active');
+        this.sidebarToggle.classList.remove('active');
         document.body.style.overflow = '';
     }
 
