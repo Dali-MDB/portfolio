@@ -348,43 +348,50 @@ const projects = [
       title: "Travel Agency Platform",
       technologies: ["Python", "Django", "DRF", "PostgreSQL", "Hybrid Recommendation System"],
       description: "Led a team of 6 to build a complete travel agency web platform. Designed and optimized a PostgreSQL database schema for scalability and data integrity, reducing redundant queries by 35%. Developed efficient RESTful APIs with Django REST Framework, achieving sub-200ms average response times through query optimization and caching strategies. Integrated a hybrid recommendation system (content-based + collaborative filtering), improving suggestion accuracy by 40%.",
-      images: [placeholderImage, placeholderImage, placeholderImage],
-      github: "https://github.com/Dali-M"
+      images: ["./images/travel_agency1.jpeg", "./images/travel_agency2.jpeg", "./images/travel_agency3.jpeg"],
+      github: "https://github.com/Dali-MDB/Escapeo"
     },
     {
         title: "Freelance Delivery System Web Application",
         technologies: ["FastAPI", "Python", "SQLAlchemy", "JWT", "Email Services"],
         description: "Developed a secure, high-performance backend for a delivery system web application using FastAPI. Implemented RESTful APIs with JWT-based authentication, role management, and email notification services. Designed ORM models and optimized SQLAlchemy queries to support order tracking, user management, and real-time status updates. Delivered a clean, scalable API structure supporting frontend integration and deployment.",
-        images: [placeholderImage],
-        github: "https://github.com/Dali-M"
+        images: ["./images/food1.png", "./images/food2.png", "./images/food3.png", "./images/food4.png"],
+        github: "https://github.com/Dali-MDB/food_delivery"
     },
-    {
+    /*{
       title: "Internal Tools for Club Scientifique de l'ESI (CSE)",
       technologies: ["Django", "FastAPI", "PostgreSQL"],
       description: "Contributed to the development and maintenance of 3+ internal web tools, including backend APIs and management dashboards. Collaborated with team members on backend development using Django and FastAPI. Oversaw project management tasks and mentored new developers in API optimization and backend workflows.",
       images: [placeholderImage],
       github: "https://github.com/Dali-M"
-    },
+    },*/
     {
       title: "Stock Management System",
       technologies: ["Python", "PyQt6", "Pandas", "Data sheet based storage"],
       description: "Developed a modern, user-friendly stock management system for a local retail store using PyQt6 for the desktop application interface. Designed an efficient data storage mechanism leveraging structured spreadsheet files as a lightweight, portable database alternative for inventory tracking, sales records, and supplier management. Delivered a reliable, intuitive system enabling store staff to easily manage stock levels, generate reports, and optimize inventory operations without the need for a full-fledged database server.",
-      images: [placeholderImage],
-      github: "https://github.com/Dali-M"
+      images: ["./images/Al_Hadi1.png", "./images/Al_Hadi2.png", "./images/Al_Hadi3.png"],
+      github: "https://github.com/Dali-MDB/Melio_Store"
     },
-    {
+    /*{
       title: "Fitness Web App",
       technologies: ["Python", "Django", "DRF", "PostgreSQL", "Hybrid Recommendation System"],
       description: "Django-based fitness app with user auth, workout logs, and progress tracking.",
       images: [placeholderImage],
       github: "https://github.com/Dali-M"
-    },
-    {
+    },*/
+    /*{
         title: "Inventory Demand Predictor",
         technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Seaborn"],
         description: "Developed a predictive analytics tool designed to forecast product demand for retail inventory management. Leveraged historical sales data and seasonal trends to train a regression model using scikit-learn, accurately predicting future stock requirements. Built automated data preprocessing pipelines with Pandas, performed exploratory data analysis, and visualized key insights through Matplotlib. This tool enables store managers to optimize inventory restocking schedules, reduce overstocking and shortages, and improve operational efficiency.",
         images: [placeholderImage],
         github: "https://github.com/Dali-M"
+    },*/
+    {
+        title: "Transport Management System",
+        technologies: ["Java", "JavaFx"],
+        description: "Developped a desktop application for a transport systen to manage their trainways and drivers. The application allows the user to purchase tickets and benifit from discounts and cards (for elderly, students, disabled, etc.), the system also allows the admin for validation and management of stations and trainways.",
+        images: ["./images/ESI_RUN1.png", "./images/ESI_RUN2.png", "./images/ESI_RUN3.png"],
+        github: "https://github.com/Dali-MDB/ESI-RUN"
     }
   ];
   
