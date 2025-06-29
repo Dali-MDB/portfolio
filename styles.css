@@ -581,13 +581,13 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
 .skill-card {
     background: var(--card-bg);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 16px;
     border: 1px solid var(--border);
     transition: all 0.3s ease;
@@ -652,16 +652,18 @@ body {
 .skill-items {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 10px;
     position: relative;
     z-index: 1;
 }
 
 .skill-item {
+    width: 100%!important;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.5rem 0;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0!important;
 }
 
 .skill-name {
@@ -812,7 +814,7 @@ body {
 
 /* Projects Section */
 /* Section container */
-#section-projects {
+#projects {
     padding: 60px 30px;
     width: 90%;
     margin: auto;
@@ -1125,8 +1127,10 @@ body {
     }
     
     .skill-item {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%!important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 0.5rem;
     }
     
@@ -1152,7 +1156,7 @@ body {
     }
     
     .skill-percentage {
-        align-self: flex-end;
+        align-self: center;
     }
     
     .section-pagination {
@@ -1176,15 +1180,17 @@ body {
     .page-content {
         padding: 0 1rem;
     }
-    
+    .skills-grid{
+        gap: 0.5rem;
+    }
     .projects-grid,
-    .skills-grid,
     .contact-grid {
         gap: 1.5rem;
     }
-    
+    .skill-card{
+        margin: 0;
+    }
     .project-card,
-    .skill-card,
     .contact-card {
         margin:  1rem;
     }
@@ -1551,8 +1557,10 @@ select:focus {
         gap: 1.5rem;
     }
     
+    .skill-card{
+        margin: 0;
+    }
     .project-card,
-    .skill-card,
     .contact-card {
         margin: 1rem;
     }

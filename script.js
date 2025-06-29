@@ -38,20 +38,6 @@ class PortfolioApp {
             }
         });
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -63,8 +49,9 @@ class PortfolioApp {
     setupScrollEffects() {
         let lastScrollTop = 0;
         const navContainer = this.topNav.querySelector('.nav-container');
+        let ticking = false;
         
-        window.addEventListener('scroll', () => {
+        const updateNavOnScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             // Add scrolled class for transparency effect
@@ -78,35 +65,64 @@ class PortfolioApp {
             this.updateActiveNavLink();
             
             lastScrollTop = scrollTop;
+            ticking = false;
+        };
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateNavOnScroll);
+                ticking = true;
+            }
         });
     }
 
     updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
+        const topNavLinks = document.querySelectorAll('.nav-links a');
+        const sidebarNavLinks = document.querySelectorAll('.sidebar-nav .nav-item');
         
         let currentSection = '';
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
         
+        // Check each section to see if it's currently in view
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100; // Offset for navbar height
+            const sectionTop = section.offsetTop - 150; // Offset for navbar height
             const sectionHeight = section.offsetHeight;
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const sectionBottom = sectionTop + sectionHeight;
             
-            if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+            // Check if the section is currently in the viewport
+            if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
                 currentSection = section.getAttribute('id');
             }
         });
         
-        // Remove active class from all nav links
-        navLinks.forEach(link => {
+        // If no section is found and we're at the top, default to hero
+        if (!currentSection && scrollTop < 100) {
+            currentSection = 'hero';
+        }
+        
+        // Remove active class from all nav links (both top and sidebar)
+        topNavLinks.forEach(link => {
             link.classList.remove('active');
         });
         
-        // Add active class to current section's nav link
+        sidebarNavLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Add active class to current section's nav links
         if (currentSection) {
-            const activeLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
+            // Update top navigation
+            const activeTopLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
+            if (activeTopLink) {
+                activeTopLink.classList.add('active');
+            }
+            
+            // Update sidebar navigation
+            const activeSidebarLink = document.querySelector(`.sidebar-nav .nav-item[href="#${currentSection}"]`);
+            if (activeSidebarLink) {
+                activeSidebarLink.classList.add('active');
             }
         }
     }
@@ -217,6 +233,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize projects
     renderProjects();
     
+    // Navigation event listeners
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            
+            if (target) {
+                // Close sidebar if it's open
+                app.closeSidebar();
+                
+                // Smooth scroll to target
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Update active state after scroll completes
+                setTimeout(() => {
+                    app.updateActiveNavLink();
+                }, 500);
+            }
+        });
+    });
+    
+    // Initial active state update
+    app.updateActiveNavLink();
+    
     // Pagination controls
     document.getElementById("prevPage").addEventListener("click", (event) => {
         event.preventDefault();
@@ -225,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage--;
             renderProjects();
             // Scroll to top of projects section
-            document.getElementById("section-projects").scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById("projects").scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
     
@@ -236,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage++;
             renderProjects();
             // Scroll to top of projects section
-            document.getElementById("section-projects").scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById("projects").scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
     
@@ -274,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentPage = i;
                     renderProjects();
                     // Scroll to top of projects section
-                    document.getElementById("section-projects").scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById("projects").scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
             
