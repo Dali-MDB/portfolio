@@ -1655,9 +1655,10 @@ select:focus {
     .page-content {
         padding: 0 1rem;
     }
-    
+    .skills-grid{
+        gap: 1rem;
+    }
     .projects-grid,
-    .skills-grid,
     .contact-grid {
         gap: 1.5rem;
     }
@@ -2248,4 +2249,159 @@ select:focus {
 
 .sidebar-close {
     display: block;
+}
+
+/* Very Small Screen Responsive Fixes */
+@media (max-width: 450px) {
+    /* Footer fixes */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-section p {
+        font-size: 0.85rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+    
+    .footer-contact-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .footer-contact-item .contact-link {
+        font-size: 0.8rem;
+        word-break: break-word;
+    }
+    
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+    
+    /* Navbar fixes */
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-brand {
+        font-size: 1.1rem;
+    }
+    
+    .sidebar-toggle {
+        padding: 0.3rem;
+    }
+    
+    .sidebar-toggle span {
+        width: 20px;
+        height: 2px;
+    }
+    
+    /* Skills section font size reduction */
+    .skill-card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .skill-name {
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
+    
+    .skill-percentage {
+        font-size: 0.6rem;
+    }
+    
+    .skill-circle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* General text size adjustments */
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-content p {
+        font-size: 0.85rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.85rem;
+    }
+    
+    /* Contact section adjustments */
+    .contact-card h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-card p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-link {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    /* About section adjustments */
+    .about-text p {
+        font-size: 0.9rem;
+    }
+    
+    /* Button adjustments */
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Sidebar adjustments */
+    .sidebar {
+        width: 100%;
+    }
+    
+    .sidebar-content {
+        padding: 1.5rem;
+    }
+    
+    .nav-text {
+        font-size: 0.9rem;
+    }
+    
+    .sidebar-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .sidebar-header p {
+        font-size: 0.8rem;
+    }
 }
