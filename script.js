@@ -358,13 +358,7 @@ const projects = [
         images: ["./images/food1.png", "./images/food2.png", "./images/food3.png", "./images/food4.png"],
         github: "https://github.com/Dali-MDB/food_delivery"
     },
-    /*{
-      title: "Internal Tools for Club Scientifique de l'ESI (CSE)",
-      technologies: ["Django", "FastAPI", "PostgreSQL"],
-      description: "Contributed to the development and maintenance of 3+ internal web tools, including backend APIs and management dashboards. Collaborated with team members on backend development using Django and FastAPI. Oversaw project management tasks and mentored new developers in API optimization and backend workflows.",
-      images: [placeholderImage],
-      github: "https://github.com/Dali-M"
-    },*/
+   
     {
       title: "Stock Management System",
       technologies: ["Python", "PyQt6", "Pandas", "Data sheet based storage"],
@@ -372,20 +366,6 @@ const projects = [
       images: ["./images/Al_Hadi1.png", "./images/Al_Hadi2.png", "./images/Al_Hadi3.png"],
       github: "https://github.com/Dali-MDB/Melio_Store"
     },
-    /*{
-      title: "Fitness Web App",
-      technologies: ["Python", "Django", "DRF", "PostgreSQL", "Hybrid Recommendation System"],
-      description: "Django-based fitness app with user auth, workout logs, and progress tracking.",
-      images: [placeholderImage],
-      github: "https://github.com/Dali-M"
-    },*/
-    /*{
-        title: "Inventory Demand Predictor",
-        technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Seaborn"],
-        description: "Developed a predictive analytics tool designed to forecast product demand for retail inventory management. Leveraged historical sales data and seasonal trends to train a regression model using scikit-learn, accurately predicting future stock requirements. Built automated data preprocessing pipelines with Pandas, performed exploratory data analysis, and visualized key insights through Matplotlib. This tool enables store managers to optimize inventory restocking schedules, reduce overstocking and shortages, and improve operational efficiency.",
-        images: [placeholderImage],
-        github: "https://github.com/Dali-M"
-    },*/
     {
         title: "Transport Management System",
         technologies: ["Java", "JavaFx"],
