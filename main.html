@@ -62,7 +62,11 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-layout">
+    <figure class="hero-portrait">
+      <img id="heroProfileImg" src="./images/me.png" alt="Mohamed Dali Braham" width="440" height="440" decoding="async" />
+    </figure>
+    <div class="hero-inner">
     <div class="hero-tag">Available for internship · 2026</div>
     <h1 class="hero-name">
       <span class="line1">Mohamed Dali</span><br>
@@ -80,6 +84,7 @@
         Get in Touch
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
       </a>
+    </div>
     </div>
   </div>
 
@@ -257,154 +262,7 @@
         </div>
       </div>
 
-      <div class="carousel-track" id="carouselTrack">
-
-        <!-- 1: DataHack Organizer -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">01</div>
-          <div class="project-badges">
-            <span class="badge badge-prod">Production</span>
-            <span class="badge badge-lead">Team Lead</span>
-          </div>
-          <div class="project-title">DataHack 2026 — Organizer Platform</div>
-          <p class="project-desc">Led 4 backend developers end-to-end: data model, API contracts, code reviews, and architectural standards. Built a QR-based multi-checkpoint check-in system for real-time participant tracking. Deployed and monitored on CPanel — on call during the live event, zero critical failures.</p>
-          <div class="project-stack">
-            <span class="stack-chip">FastAPI</span><span class="stack-chip">PostgreSQL</span><span class="stack-chip">QR Codes</span><span class="stack-chip">React</span><span class="stack-chip">CPanel</span>
-          </div>
-          <a href="https://github.com/Dali-MDB" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 2: Traveleo -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">02</div>
-          <div class="project-badges">
-            <span class="badge badge-lead">Team Lead</span>
-          </div>
-          <div class="project-title">Traveleo — Travel Agency Platform</div>
-          <p class="project-desc">Led backend architecture for a full booking platform. APIs optimized to sub-200ms via indexing, query tuning, and Redis caching. Real-time messaging via Django Channels. Hybrid recommendation system (content-based + collaborative filtering).</p>
-          <div class="project-stack">
-            <span class="stack-chip">DRF</span><span class="stack-chip">Next.js</span><span class="stack-chip">PostgreSQL</span><span class="stack-chip">Redis</span><span class="stack-chip">Celery</span><span class="stack-chip">Django Channels</span>
-          </div>
-          <a href="https://github.com/Dali-MDB/Escapeo" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 3: Insurance SaaS -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">03</div>
-          <div class="project-badges">
-            <span class="badge badge-arch">Architecture</span>
-          </div>
-          <div class="project-title">Melio Insurance SaaS</div>
-          <p class="project-desc">Multi-tenant SaaS backend — full PostgreSQL schema isolation per tenant with domain-based routing. 10-stage claim lifecycle enforced as a validated state machine. RBAC across 6 roles with granular per-endpoint permission classes. Includes policy renewal and global admin layer for tenant onboarding.</p>
-          <div class="project-stack">
-            <span class="stack-chip">DRF</span><span class="stack-chip">django-tenants</span><span class="stack-chip">PostgreSQL</span><span class="stack-chip">JWT</span><span class="stack-chip">RBAC</span>
-          </div>
-          <a href="https://github.com/Dali-MDB/melio-insurance-saas" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 4: Agent Swarm -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">04</div>
-          <div class="project-badges">
-            <span class="badge badge-ai">AI · Multi-agent</span>
-          </div>
-          <div class="project-title">Code Review Agent Swarm</div>
-          <p class="project-desc">Multi-agent pipeline for automated code review on Python repositories. Three independent LangGraph agents — analyzer, fixer, and judge — share a common state and form an end-to-end reasoning loop: detect issues, generate fixes, validate output. No human in the loop.</p>
-          <div class="project-stack">
-            <span class="stack-chip">LangGraph</span><span class="stack-chip">OpenRouter</span><span class="stack-chip">Python</span>
-          </div>
-          <a href="https://github.com/Dali-MDB" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 5: Socmel -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">05</div>
-          <div class="project-badges">
-            <span class="badge badge-arch">Architecture</span>
-          </div>
-          <div class="project-title">Socmel — Social Platform Backend</div>
-          <p class="project-desc">Reverse-engineered Instagram's feed logic and Discord's channel architecture to understand production-grade system design from the inside. Real-time DMs, group chats, and server-channel routing via WebSockets. Rate limiting, response caching, background task processing.</p>
-          <div class="project-stack">
-            <span class="stack-chip">FastAPI</span><span class="stack-chip">PostgreSQL</span><span class="stack-chip">WebSockets</span>
-          </div>
-          <a href="https://github.com/Dali-MDB/socmel" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 6: InkSmart -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">06</div>
-          <div class="project-badges">
-            <span class="badge badge-ai">AI Pipeline</span>
-          </div>
-          <div class="project-title">Melio InkSmart — AI Publishing</div>
-          <p class="project-desc">Async NLP pipeline triggered on article publish: Celery workers run HuggingFace models outside the request cycle to generate summaries and semantic tags automatically. Redis caching and rate limiting stabilize inference throughput under traffic spikes.</p>
-          <div class="project-stack">
-            <span class="stack-chip">DRF</span><span class="stack-chip">Celery</span><span class="stack-chip">Redis</span><span class="stack-chip">HuggingFace</span><span class="stack-chip">PostgreSQL</span>
-          </div>
-          <a href="https://github.com/Dali-MDB" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 7: DataHack Registration -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">07</div>
-          <div class="project-badges">
-            <span class="badge badge-prod">Production</span>
-          </div>
-          <div class="project-title">DataHack 2026 — Registration</div>
-          <p class="project-desc">Registration backend for ESI's largest data science event. Team formation, member validation, random assignment, and edge case handling. Stayed on call during the live event under real traffic — the system held.</p>
-          <div class="project-stack">
-            <span class="stack-chip">Express.js</span><span class="stack-chip">MongoDB</span>
-          </div>
-          <a href="https://github.com/Dali-MDB" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <!-- 8: Resume Ranker -->
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-num">08</div>
-          <div class="project-badges">
-            <span class="badge badge-ai">NLP Tool</span>
-          </div>
-          <div class="project-title">Resume Ranker</div>
-          <p class="project-desc">FastAPI service that extracts text from PDF resumes and scores them against job descriptions using NLP similarity. Returns match scores and targeted suggestions based on missing keywords. Built with spaCy and sentence-transformers for semantic matching.</p>
-          <div class="project-stack">
-            <span class="stack-chip">FastAPI</span><span class="stack-chip">spaCy</span><span class="stack-chip">sentence-transformers</span><span class="stack-chip">PyMuPDF</span>
-          </div>
-          <a href="https://github.com/Dali-MDB/resume_ranker" class="project-link" target="_blank">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-      </div>
+      <div class="carousel-track" id="carouselTrack" aria-label="Featured projects"></div>
 
       <div class="carousel-progress" id="carouselProgress"></div>
     </div>
