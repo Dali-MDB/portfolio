@@ -13,6 +13,7 @@ const PROJECTS_DATA = [
       'Led 4 backend developers end-to-end: data model, API contracts, code reviews, and architectural standards. Built a QR-based multi-checkpoint check-in system for real-time participant tracking. Deployed and monitored on CPanel — on call during the live event, zero critical failures.',
     stack: ['FastAPI', 'PostgreSQL', 'QR Codes', 'React', 'CPanel'],
     github: 'https://github.com/Dali-MDB',
+    private: true,
   },
   {
     badges: [{ variant: 'lead', label: 'Team Lead' }],
@@ -21,6 +22,7 @@ const PROJECTS_DATA = [
       'Led backend architecture for a full booking platform. APIs optimized to sub-200ms via indexing, query tuning, and Redis caching. Real-time messaging via Django Channels. Hybrid recommendation system (content-based + collaborative filtering).',
     stack: ['DRF', 'Next.js', 'PostgreSQL', 'Redis', 'Celery', 'Django Channels'],
     github: 'https://github.com/Dali-MDB/Escapeo',
+    private: false,
   },
   {
     badges: [{ variant: 'arch', label: 'Architecture' }],
@@ -29,6 +31,7 @@ const PROJECTS_DATA = [
       'Multi-tenant SaaS backend — full PostgreSQL schema isolation per tenant with domain-based routing. 10-stage claim lifecycle enforced as a validated state machine. RBAC across 6 roles with granular per-endpoint permission classes. Includes policy renewal and global admin layer for tenant onboarding.',
     stack: ['DRF', 'django-tenants', 'PostgreSQL', 'JWT', 'RBAC'],
     github: 'https://github.com/Dali-MDB/melio-insurance-saas',
+    private: false,
   },
   {
     badges: [{ variant: 'ai', label: 'AI · Multi-agent' }],
@@ -37,6 +40,7 @@ const PROJECTS_DATA = [
       'Multi-agent pipeline for automated code review on Python repositories. Three independent LangGraph agents — analyzer, fixer, and judge — share a common state and form an end-to-end reasoning loop: detect issues, generate fixes, validate output. No human in the loop.',
     stack: ['LangGraph', 'OpenRouter', 'Python'],
     github: 'https://github.com/Dali-MDB',
+    private: true,
   },
   {
     badges: [{ variant: 'arch', label: 'Architecture' }],
@@ -45,6 +49,7 @@ const PROJECTS_DATA = [
       "Reverse-engineered Instagram's feed logic and Discord's channel architecture to understand production-grade system design from the inside. Real-time DMs, group chats, and server-channel routing via WebSockets. Rate limiting, response caching, background task processing.",
     stack: ['FastAPI', 'PostgreSQL', 'WebSockets'],
     github: 'https://github.com/Dali-MDB/socmel',
+    private: false,
   },
   {
     badges: [{ variant: 'ai', label: 'AI Pipeline' }],
@@ -53,6 +58,7 @@ const PROJECTS_DATA = [
       'Async NLP pipeline triggered on article publish: Celery workers run HuggingFace models outside the request cycle to generate summaries and semantic tags automatically. Redis caching and rate limiting stabilize inference throughput under traffic spikes.',
     stack: ['DRF', 'Celery', 'Redis', 'HuggingFace', 'PostgreSQL'],
     github: 'https://github.com/Dali-MDB',
+    private: true,
   },
   {
     badges: [{ variant: 'prod', label: 'Production' }],
@@ -61,6 +67,7 @@ const PROJECTS_DATA = [
       "Registration backend for ESI's largest data science event. Team formation, member validation, random assignment, and edge case handling. Stayed on call during the live event under real traffic — the system held.",
     stack: ['Express.js', 'MongoDB'],
     github: 'https://github.com/Dali-MDB',
+    private: true,
   },
   {
     badges: [{ variant: 'ai', label: 'NLP Tool' }],
@@ -69,6 +76,7 @@ const PROJECTS_DATA = [
       'FastAPI service that extracts text from PDF resumes and scores them against job descriptions using NLP similarity. Returns match scores and targeted suggestions based on missing keywords. Built with spaCy and sentence-transformers for semantic matching.',
     stack: ['FastAPI', 'spaCy', 'sentence-transformers', 'PyMuPDF'],
     github: 'https://github.com/Dali-MDB/resume_ranker',
+    private: false,
   },
 ];
 
@@ -128,13 +136,15 @@ function buildProjectCard(project, index) {
   });
   card.appendChild(stack);
 
-  const link = document.createElement('a');
-  link.href = project.github;
-  link.className = 'project-link';
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.innerHTML = `View on GitHub ${GITHUB_ICON_SVG}`;
-  card.appendChild(link);
+  if (!project.private && project.github) {
+    const link = document.createElement('a');
+    link.href = project.github;
+    link.className = 'project-link';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.innerHTML = `View on GitHub ${GITHUB_ICON_SVG}`;
+    card.appendChild(link);
+  }
 
   return card;
 }
